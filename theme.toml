@@ -1,0 +1,21 @@
+# Example File @ https://github.com/gohugoio/hugoThemes#themetoml
+name = "Earthbound Misfit"
+license = "MIT"
+licenselink = "Link to theme's license"
+description = "A simple bootstrap 5.1 theme for Hugo"
+homepage = "https://earthboundmisfit.atestpage.com"
+tags = ["home", "personal"]
+features = ["bootstrap", "homepage", "seo", "somethingelse"]
+min_version = "0.88.1"
+
+
+# If the theme has a single author
+[author]
+    name = "Vid Luther"
+    homepage = "https://luther.io"
+
+# If porting an existing theme
+[original]
+    author = "Name of original author"
+    homepage = "His/Her website"
+    repo = "Link to source code of original theme"

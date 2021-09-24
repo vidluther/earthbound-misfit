@@ -1,0 +1,36 @@
+<head>
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Hugo version -->
+{{ hugo.Generator }} 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO Fu/Magic/Juju -->
+{{- if .IsHome }}
+<title>{{ .Site.Title }}{{ if isset .Site.Params "pagetitle" }} - {{ .Site.Params.Pagetitle }}{{ end }}</title>
+{{- else }}
+<title>{{ .Title }} | {{ .Site.Title }}</title>
+{{- end }}
+{{- with $.Param "author" }}
+<meta name="author" content="{{ . }}">
+{{- end }}
+
+{{- if or .Description $.Site.Params.metaDescription }}
+<meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.metaDescription }}{{ else }}{{ if isset .Params "description" }}{{ .Description }}{{ else }}{{ .Plain  | htmlUnescape | safeHTML | truncate 155 }}{{ end }}{{ end }}">
+{{- end }}
+{{- if or .Params.tags $.Site.Params.metaKeywords }}
+<meta name="keywords" content="{{ if .Params.tags }}{{ delimit .Params.tags ", " }}{{ else }}{{ delimit $.Site.Params.metaKeywords ", " }}{{ end }}">
+{{- end }}
+
+{{- if eq .Site.Params.favicon true }}
+<link rel="icon" type="image/png" href="{{ relURL "/favicon-32x32.png" }}" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ relURL "/favicon-16x16.png" }}" sizes="16x16">
+{{- end }}
+
+
+<!-- /SEO Fu/Magic/Juju -->
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+</head>

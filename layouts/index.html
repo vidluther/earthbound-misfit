@@ -1,0 +1,49 @@
+{{ define "main" }}
+<main>
+  <div class="p-5 mb-4 bg-light rounded-3">
+
+    <div class="container-fluid py-5">
+      <h2> {{ .Site.Params.headerText }}</h2>
+        <p class="fs-5 col-md-8">
+          This is the demo site for <em> <strong>  {{ .Site.Params.author }} </strong></em> (can be easily changed by editing <code>config/_default/config.toml</code> ) and this is a demo of the hugo theme 
+          I am building called <strong> {{ .Site.Title }}</strong>. It's built using Hugo, Bootstrap 5.1 and Feather Icons. I hope you like it. 
+          If you wanted, you can fill out this section with other stuff if you so desired. 
+          This is the <em> <strong> Home Layout </strong></em>, you can find this file in <code>themes/earthbound-misfit/layouts/index.html</code>, if this file was to be removed, you would get a 
+          vanilla list of posts as your home page.  <br /> 
+        </p>
+          <hr class="col-3 col-md-2 mb-5">
+    </div>
+</div>
+  
+  <div class="row g-5">
+    <div class="col-md-6">
+      <h2>My Pages</h2>
+      <p>This is a list of all pages, including taxonomy pages. </p>
+      <ul class="icon-list">
+        {{ range .Pages.ByPublishDate.Reverse }}
+
+          <li> <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+
+        {{ end }}
+      
+      </ul>
+    </div>
+
+    <div class="col-md-6">
+      <h2>My Recent Posts</h2>
+      <p>This is a list of all pages that are <strong> Regular </strong>(<a href="https://gohugo.io/variables/page/#pages"> Hugo Pages </a>) </p>
+      <ul class="icon-list">
+
+        {{ range .RegularPages.ByPublishDate.Reverse }}
+
+          <li> <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+
+        {{ end }}
+        
+        <li><a href="../getting-started/contribute/">Contributing to Bootstrap</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+{{ end }}

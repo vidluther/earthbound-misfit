@@ -23,6 +23,45 @@ The theme functionality/configuration ideas came from
 1. [Hugo Documentation](https://gohugo.io/variables/page/#pages)
 1. This site uses [Feather icons](https://feathericons.com/) .. I'm not sure why I picked these over font-awesome.. I had never heard of these until a few weeks ago.. font-awesome is probably cached in everyone's browser so those may actually be faster. 
 
+## Features 
+
+### Plausible Analytics 
+
+The theme supports Plausible Analytics, if you're curious why I chose and recommend simple analytics you should read this post by David Mytton [Picking Privacy first analytics](https://blog.console.dev/picking-privacy-first-analytics/). 
+
+To enable it all you need to do is add the following to your config.toml
+```toml
+[params.toml]
+    enabled = true
+    domain = 'yourdomain.com'
+```
+
+The theme will automatically setup the outbound-link JS. 
+
+If you want some advanced functionality with Plausible analytics, I recommend you use the [Plausible Hugo Component/Module](https://github.com/divinerites/plausible-hugo) 
+
+### Favicons
+
+Favicons can be enabled by setting your params in the config file. 
+
+```toml
+[params]
+    ... # other stuff
+    favicons = true
+```
+
+If you have your own favicons, make sure they follow the naming convention as specified, and put them in your static folder. Otherwise it'll use the favicons for the theme. 
+
+### Site Verification 
+
+**Google:** Just add the following line to your configuration file. 
+
+```toml
+[params.google]
+siteVerification = "YOUR-GOOGLE-SITE-VERIFICATION-CODE"
+
+```
+
 ## Demo 
 
 A demo of this site will be available at https://atestpage.com 

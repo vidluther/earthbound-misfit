@@ -1,46 +1,55 @@
 {{ define "main" }}
 <main>
-  <div class="p-5 mb-4 bg-light rounded-3">
+  <div class="p-1 mb-3 bg-light rounded-3">
 
     <div class="container-fluid py-5">
       <h2> {{ .Site.Params.headerText }}</h2>
         <p class="fs-5 col-md-8">
-          This is the demo site for <em> <strong>  {{ .Site.Params.author }} </strong></em> (can be easily changed by editing <code>config/_default/config.toml</code> ) and this is a demo of the hugo theme 
-          I am building called <strong> {{ .Site.Title }}</strong>. It's built using Hugo, Bootstrap 5.1 and Feather Icons. I hope you like it. 
-          If you wanted, you can fill out this section with other stuff if you so desired. 
-          This is the <em> <strong> Home Layout </strong></em>, you can find this file in <code>themes/earthbound-misfit/layouts/index.html</code>, if this file was to be removed, you would get a 
-          vanilla list of posts as your home page.  <br /> 
+          This is the demo site for <em> <strong><a href="https://github.com/vidluther/earthbound-misfit/">   {{ .Site.Title }} </a></strong></em>  a hugo theme by <strong> 
+          {{ .Site.Params.author }} </strong> It's built using Hugo, Bootstrap 5.1 and Feather Icons. I hope you like it. 
+      
+          This is the <em> <strong> Homepage Layout </strong></em>, you can find this file in <code>themes/earthbound-misfit/layouts/index.html</code>, 
+          if this file was to be removed, you would get a vanilla list of posts as your home page.  <br /> <br />
         </p>
           <hr class="col-3 col-md-2 mb-5">
+
+        This site is hosted on <a href="https://workers.cloudflare.com/"> Cloudflare Workers sites </a> .. <br /> 
+        Thanks to  <a href="https://avatarmaker.com/"> Avatar Maker</a> for the Avatar. <br />
+        Thanks also to <a href="https://realfavicongenerator.net/"> Real Favicon Generator </a> for the Favicons <br />
+        
     </div>
 </div>
   
   <div class="row g-5">
     <div class="col-md-6">
-      <h2>My Pages</h2>
-      <p>This is a list of all pages, including taxonomy pages. </p>
+      <h2> My Socials </h2>
+      <p> This is the output of <strong> <code>config/_default/menu.toml </code> </strong> [[socials]] array. You see the same thing
+      in the footer, but without the text, instead the feather icons are being displayed. <code> <a href="https://github.com/vidluther/earthbound-misfit/blob/main/layouts/index.html#L21-L26">index.html</a> </code>
       <ul class="icon-list">
-        {{ range .Pages.ByPublishDate.Reverse }}
 
-          <li> <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-
+        {{ range .Site.Menus.social }}
+        <li> <a class="title" href="{{ .URL }}"> 
+           
+            {{ $text := print .Name  }}
+            {{ $text }}
+           </a> </li> 
         {{ end }}
       
       </ul>
     </div>
 
     <div class="col-md-6">
-      <h2>My Recent Posts</h2>
-      <p>This is a list of all pages that are <strong> Regular </strong>(<a href="https://gohugo.io/variables/page/#pages"> Hugo Pages </a>) </p>
+      <h2>My Pages</h2>
+      <p>This is a list of all Pages that have been published, not posts. If you click on Posts, you'll see all the posts. </strong>(<a href="https://gohugo.io/variables/page/#pages"> Hugo Pages </a>) </p>
       <ul class="icon-list">
 
-        {{ range .RegularPages.ByPublishDate.Reverse }}
+        {{ range .Pages.ByTitle }}
 
           <li> <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 
         {{ end }}
         
-        <li><a href="../getting-started/contribute/">Contributing to Bootstrap</a></li>
+       
       </ul>
     </div>
   </div>

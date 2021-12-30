@@ -4,9 +4,9 @@
 <p>
     <h4><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
     {{ partial "metadata.html" . }}
-    <a class="summary" href="{{ .RelPermalink }}">
-        <p>{{ .Summary }}</p>
-    </a>
+   
+        <p class="summary">{{ .Summary }}</p>
+    
 </p>
 {{ end }}
 {{ end }}

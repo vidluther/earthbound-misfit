@@ -1,7 +1,7 @@
 <div class="col-lg-8 mx-auto p-3 py-md-5">
   <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <img src = "{{ .Site.Params.siteLogo }}" width="80" height="40" alt="My Happy SVG"/>
+      <img src = "{{ .Site.Params.siteLogo }}" width="{{ .Site.Params.siteLogoWidth }}" height="{{ .Site.Params.siteLogoHeight }}" alt="My Happy SVG"/>
       <a href="{{ $.Site.BaseURL }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         
         <span class="fs-4">{{ .Site.Params.headerText }} </span>

@@ -7,18 +7,18 @@
         <span class="fs-4">{{ .Site.Params.headerText }}</span>
       </a>
 
-      <ul class="nav nav-pills">
+      <nav class="nav nav-pills justify-content-end" > 
         {{ range .Site.Menus.main }}
-        <li class="nav-item"> <a class="nav-link" href="{{ .URL }}"> 
+         <a class="nav-link" href="{{ .URL }}"> 
         {{ if .Pre }}
         {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
         {{ $icon }}
         {{ end }}
         {{ $text := print .Name | safeHTML }}
         {{ $text }}
-        </a> </li>
+        </a> 
         {{ end }}
-      </ul>
+      </nav> 
     </header>
   </div>
 

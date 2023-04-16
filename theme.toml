@@ -6,7 +6,7 @@ description = "A simple bootstrap 5.1 theme for Hugo"
 homepage = "https://earthboundmisfit.atestpage.com"
 tags = ["home", "personal"]
 features = ["bootstrap", "homepage", "seo", "somethingelse"]
-min_version = "0.88.1"
+min_version = "0.54.0"
 
 
 # If the theme has a single author
